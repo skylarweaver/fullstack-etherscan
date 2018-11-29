@@ -23,7 +23,6 @@ class SearchResults extends Component {
     this.state = {
       // Initialize searchResult until it is returned from api call
       searchResult: this.props.transactions,
-      loading: false,
     };
 
     props.actions.selectEthAddress(this.props.router.query.ethAddress);
@@ -45,8 +44,14 @@ class SearchResults extends Component {
         {
           <div>
             <div className="search-results">
-                <h1 className="search-results-headline">Showing transactions for <span className="headline-number float-right">{this.props.selectedEthAddress}</span></h1>
-                <h2 className="font-italic">Balance: {unit.fromWei(this.props.balance, 'ether')} Eth</h2>
+              <div className="search-results-heading">
+                <h1 className="current-transaction-heading">Current Search</h1>
+                <h1 className="balance-heading">Balance</h1>
+              </div>
+              <div className="search-results-heading-content">
+                <h2 className="current-transaction">{this.props.selectedEthAddress}</h2>
+                <h2 className="balance">Balance: {unit.fromWei(this.props.balance, 'ether')} Eth</h2>
+              </div>
               {
                 this.props.isTransactionsFetching === false
                   ? <SearchResultsTable

@@ -24,30 +24,29 @@ class SearchResultsTable extends Component {
     return (
       this.props.searchResults.length > 0 // Check if search result sets is not empty
         ? <div className="searchResultTable">
-          <div className="searchResultTable-count">
-            <p className="font-italic">Showing {this.props.searchResults.length} transactions </p>
-          </div>
+            <div className="searchResultTable-count">
+              <p>Showing {this.props.searchResults.length} total transactions</p>
+            </div>
 
-          <table className="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Hash</th>
-                <th scope="col">Confirmations</th>
-                <th scope="col">Value (Eth)</th>
-                <th scope="col">From</th>
-                <th scope="col">To</th>
-                <th scope="col">Gas (Wei)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                // Insert table rows that were dynamically generated above
-                searchResultTableRows
-              }
-            </tbody>
-          </table>
-
-        </div> // If empty, dispplay a friendly message
+            <table className="searchResultTable-table table-striped table-hover">
+              <thead className="searchResultTable-table-head">
+                <tr>
+                  <th scope="col">Hash</th>
+                  <th scope="col">Confirmations</th>
+                  <th scope="col">Value (Eth)</th>
+                  <th scope="col">From</th>
+                  <th scope="col">To</th>
+                  <th scope="col">Gas (Wei)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  // Insert table rows that were dynamically generated above
+                  searchResultTableRows
+                }
+              </tbody>
+            </table>
+          </div> // If empty, dispplay a friendly message
         : <div>
             <br></br>
             <h3>No Transactions found</h3>

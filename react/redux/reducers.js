@@ -18,7 +18,7 @@ function selectedEthAddress(state = 'reactjs', action) {
 
 function transactions(
   state = {
-    isFetching: false,
+    isTransactionsFetching: false,
     transactions: [],
   },
   action,
@@ -26,13 +26,13 @@ function transactions(
   switch (action.type) {
     case REQUEST_TRANSACTIONS:
       return Object.assign({}, state, {
-        isFetching: true,
+        isTransactionsFetching: true,
       });
     case RECEIVE_TRANSACTIONS:
       return Object.assign({}, state, {
-        isFetching: false,
+        isTransactionsFetching: false,
         transactions: action.transactions,
-        lastUpdated: action.receivedAt,
+        transactionsLastUpdated: action.receivedAt,
       });
     default:
       return state;
@@ -53,7 +53,7 @@ function transactionsByEthAddress(state = {}, action) {
 
 function balance(
   state = {
-    isFetching: false,
+    isBalanceFetching: false,
     balance: '',
   },
   action,
@@ -61,13 +61,13 @@ function balance(
   switch (action.type) {
     case REQUEST_BALANCE:
       return Object.assign({}, state, {
-        isFetching: true,
+        isBalanceFetching: true,
       });
     case RECEIVE_BALANCE:
       return Object.assign({}, state, {
-        isFetching: false,
+        isBalanceFetching: false,
         balance: action.balance,
-        lastUpdated: action.receivedAt,
+        balanceLastUpdated: action.receivedAt,
       });
     default:
       return state;

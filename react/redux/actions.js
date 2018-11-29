@@ -44,7 +44,7 @@ function shouldFetchTransactions(state, ethAddress) {
   const transactions = state.transactionsByEthAddress[ethAddress];
   if (!transactions) {
     return true;
-  } if (transactions.isFetching) {
+  } if (transactions.isTransactionsFetching) {
     return false;
   }
 }
@@ -89,7 +89,7 @@ function shouldFetchBalance(state, ethAddress) {
   const balance = state.balanceByEthAddress[ethAddress];
   if (!balance) {
     return true;
-  } if (balance.isFetching) {
+  } if (balance.isBalanceFetching) {
     return false;
   }
 }

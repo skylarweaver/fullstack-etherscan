@@ -1,4 +1,5 @@
 const Koa = require('koa');
+const cors = require('@koa/cors');
 const next = require('next');
 const Router = require('koa-router');
 const mongoose = require('mongoose');
@@ -16,9 +17,10 @@ app.prepare()
     const server = new Koa();
     const router = new Router();
     require('./routes')(router);
+    server.use(cors());
 
     router.get('/', async ctx => {
-      ctx.redirect('/search'); // redirect to another page
+      ctx.redirect('/search');
     });
 
     router.get('/search', async ctx => {

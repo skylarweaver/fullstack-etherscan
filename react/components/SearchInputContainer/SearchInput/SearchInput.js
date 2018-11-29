@@ -6,7 +6,7 @@ const SearchInput = ({ handleChange, ethAddress, isBtnDisabled }) => (
   <div >
     <form>
       <input name="ethAddress-input"
-        className="search input-large col-6"
+        className="search-input"
         type="text"
         placeholder="Enter ETH Address"
         aria-label="Large"
@@ -15,8 +15,8 @@ const SearchInput = ({ handleChange, ethAddress, isBtnDisabled }) => (
         maxLength="43"
         minLength="40"
       />
-      <Link href={`/search?ethAddress=${ethAddress}`}>
-        <button type="submit" className={isBtnDisabled ? '' : ''}>
+      <Link href={isBtnDisabled ? '' : `/search?ethAddress=${ethAddress}`}>
+        <button type="submit" className={isBtnDisabled ? 'search-input-button-disabled' : 'search-input-button'}>
           Search
         </button>
       </Link>
