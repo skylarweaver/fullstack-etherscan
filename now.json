@@ -1,9 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "server.js", "use": "@now/node" }
+    { "src": "package.json", "use": "@now/next" }
   ],
   "routes": [
-    { "src": "/*", "dest": "/server.js" }
+    { "src": "/.*", "dest": "/server.js" }
   ]
 }
