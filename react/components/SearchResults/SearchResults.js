@@ -25,12 +25,16 @@ class SearchResults extends Component {
       searchResult: this.props.transactions,
     };
 
-    props.actions.selectEthAddress(this.props.router.query.ethAddress);
+    if (this.props.router.query.ethAddress) {
+      props.actions.selectEthAddress(this.props.router.query.ethAddress);
+    }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.router.query.ethAddress !== prevProps.router.query.ethAddress) {
-      this.props.actions.selectEthAddress(this.props.router.query.ethAddress);
+      if (this.props.router.query.ethAddress) {
+        this.props.actions.selectEthAddress(this.props.router.query.ethAddress);
+      }
     }
     if (this.props.selectedEthAddress !== prevProps.selectedEthAddress) {
       this.props.actions.fetchTransactionsIfNeeded(this.props.selectedEthAddress);
@@ -60,9 +64,8 @@ class SearchResults extends Component {
                       balance={this.props.balance}
                     />
                   : <div className="loadingIndicator">
-                    {/* <Loader/> */}
-                    Fetching...
-                  </div>
+                    { this.props.selectedEthAddress !== '' ? <p>Fetching...</p> : <p></p> }
+                    </div>
               }
             </div>
           </div>

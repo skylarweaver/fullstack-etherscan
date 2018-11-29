@@ -19,7 +19,7 @@ class SearchInputContainer extends Component {
 
   handleChange(evt) {
     const ethAddress = evt.target.value;
-    if (ethAddress.length > 42) {
+    if (ethAddress.length > 41) {
       this.setState({
         ethAddress,
         isBtnDisabled: false,

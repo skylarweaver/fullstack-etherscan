@@ -7,7 +7,7 @@ import {
   RECEIVE_BALANCE,
 } from './actions';
 
-function selectedEthAddress(state = 'reactjs', action) {
+function selectedEthAddress(state = '', action) {
   switch (action.type) {
     case SELECT_ETHADDRESS:
       return action.ethAddress;

@@ -15,11 +15,18 @@ const SearchInput = ({ handleChange, ethAddress, isBtnDisabled }) => (
         maxLength="43"
         minLength="40"
       />
-      <Link href={isBtnDisabled ? '' : `/search?ethAddress=${ethAddress}`}>
-        <button type="submit" className={isBtnDisabled ? 'search-input-button-disabled' : 'search-input-button'}>
-          Search
-        </button>
-      </Link>
+      {
+        isBtnDisabled
+          ? <button disabled className='search-input-button-disabled'>
+              Search
+            </button>
+          : <Link href={`/search?ethAddress=${ethAddress}`}>
+              <button type="submit" className='search-input-button'>
+                Search
+              </button>
+            </Link>
+      }
+
     </form>
   </div>
 );
