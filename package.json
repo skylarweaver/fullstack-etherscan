@@ -1,5 +1,5 @@
 {
-  "name": "custom-server-koa",
+  "name": "fullstack-etherscan",
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon server.js",
