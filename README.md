@@ -53,28 +53,3 @@ Fullstack Etherscan App
 ## Deploy on Server
 
 ## Misc.
-### Clean up unsused Docker containers to free disk space
-Warning: these command will delete ALL Docker containers and images
-
-* Delete all containers
-```
-docker rm $(docker ps -a -q)
-```
-* Delete all images
-```
-docker rmi $(docker images -q)
-```
-
-### Other useful Docker Commands
-
-* Get running containers
-```
-docker ps
-```
-
-* Go inside running container to inspect
-```
-docker exec -i -t containerID /bin/sh
-```
-
-/etc/init.d/apache2 stop

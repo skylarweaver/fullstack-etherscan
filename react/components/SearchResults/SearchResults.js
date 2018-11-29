@@ -5,14 +5,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import unit from 'ethjs-unit';
-
 // Import Actions
 import {
   selectEthAddress,
   fetchTransactionsIfNeeded,
   fetchBalanceIfNeeded,
 } from '../../redux/actions';
-
 // Import components
 import SearchResultsTable from './SearchResultsTable/SearchResultsTable';
 
