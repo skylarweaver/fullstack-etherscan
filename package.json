@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next build && NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@koa/cors": "2",

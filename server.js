@@ -18,6 +18,7 @@ app.prepare()
     const router = new Router();
     require('./routes')(router);
     server.use(cors());
+    server.use(router.routes());
 
     router.get('/', async ctx => {
       ctx.redirect('/search');
@@ -38,7 +39,6 @@ app.prepare()
       await next();
     });
 
-    server.use(router.routes());
     server.listen(port, () => {
       console.log(`> Ready on http://localhost:${port}`);
     });
