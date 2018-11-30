@@ -2,6 +2,10 @@ Fullstack Etherscan App
 ===============
 
 
+A simple fullstack SSR web app used to search ether transactions by ETH address using Etherscan's API. 
+
+Check out the quick [screencast demo](https://drive.google.com/file/d/1aAgjQI3_VDO_YfYLDcx5fmGh_RYB_oR8/view?usp=sharing).
+
 ## Tools Used 
 * NextJs
 * Koa
@@ -49,7 +53,3 @@ Fullstack Etherscan App
 
 ## Run locally
 * `yarn dev` - To run the application for local development, includes livereload
-
-## Deploy on Server
-
-## Misc.
